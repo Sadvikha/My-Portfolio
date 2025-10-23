@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*body {
+  @apply bg-gray-900;
+}*/
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base page */
+:root {
+  --bg: #0b0f14;
+  --panel: #0f1720;
+  --muted: #9aa4b2;
+  --accent: #3b82f6; /* blue */
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(59,130,246,0.06), transparent 8%),
+              radial-gradient(900px 500px at 90% 90%, rgba(124,58,237,0.04), transparent 8%),
+              var(--bg);
+  color: #e6eef8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Small utilities */
+.card {
+  @apply bg-[#0d1115] rounded-2xl border border-white/10;
+}
+
+.tag {
+  @apply inline-flex items-center gap-2 bg-white/10 text-sm px-3 py-1 rounded-full;
+}
+
+
+/* Smooth link hover */
+a {
+  @apply transition-colors;
+}
