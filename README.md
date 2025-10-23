@@ -6,8 +6,8 @@ This project reflects my technical skills, design sense, and commitment to creat
 ---
 
 ## 🚀 Live Demo
-🔗 [View Portfolio](#)  
-*(Hosting link will be added once deployed)*
+🔗 [View Portfolio](https://sadvikha.github.io/My-Portfolio/)
+
 
 ---
 
