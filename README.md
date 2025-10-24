@@ -54,7 +54,7 @@ To run this project locally on your system:
 
 ```bash
 # Clone this repository
-git clone https://github.com/sadvikha/my-portfolio.git
+git clone https://github.com/sadvikha/My-Portfolio.git
 
 # Navigate to the folder
 cd my-portfolio
