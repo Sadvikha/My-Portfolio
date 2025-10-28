@@ -432,7 +432,7 @@ My academic foundation in Computer Science with a specialization in Data Science
                 </a>
 
                 <a
-                  href="https://drive.google.com/file/d/1OXgb4K9qS3HTZIpYPIYOzKvxe5O18S8J/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1wJWtvkvw5ordvFttl5XQ-v-RewyO2VXi/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-all duration-300">
