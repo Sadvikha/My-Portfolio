@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import { Lock, Cloud, ChevronRight, Mail, MapPin, Github, Linkedin, ExternalLink, Calendar, Award, Code, Briefcase, User, Home, FolderOpen, Target, ChevronDown, ChevronUp, FileText } from 'lucide-react';
 
 const Portfolio = () => {
+  useEffect(() => {
+  document.title = "Sadvikha’s Portfolio";
+}, []);
   const [currentPage, setCurrentPage] = useState('home');
   const [isLoading, setIsLoading] = useState(false);
   const [expandedExp, setExpandedExp] = useState({});
