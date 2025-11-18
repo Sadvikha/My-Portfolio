@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Lock, Cloud, ChevronRight, Mail, MapPin, Github, Linkedin, ExternalLink, Calendar, Award, Code, Briefcase, User, Home, FolderOpen, Target, ChevronDown, ChevronUp, FileText } from 'lucide-react';
+import { Lock, Cloud, ChevronRight, Mail, MapPin, Github, Linkedin, ExternalLink, Calendar, Award, Code, Briefcase, User, Home, FolderOpen, Target, ChevronDown, ChevronUp } from 'lucide-react';
 
 const Portfolio = () => {
   useEffect(() => {
@@ -10,7 +10,7 @@ const Portfolio = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [expandedExp, setExpandedExp] = useState({});
 
-  // ⭐ NEW: FIXES SCROLL NOT RESETTING WHEN SWITCHING SECTIONS
+  // ⭐ FIX: Scroll resets when section changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage]);
@@ -87,33 +87,6 @@ My academic foundation in Computer Science with a specialization in Data Science
         "Applied data analysis techniques to real-world problems and supervised student projects"
       ],
       technologies: ["Python", "Machine Learning", "Big Data Analytics", "Data Science"]
-    },
-    {
-      title: "AWS Cloud Intern",
-      company: "All India Council for Technical Education (AICTE)",
-      period: "Oct 2021 – Dec 2021",
-      location: "India",
-      type: "Internship",
-      description: [
-        "Gained hands-on experience in deploying and managing cloud infrastructure using EC2, S3, IAM, Lambda",
-        "Built and tested scalable, serverless cloud applications using AWS Lambda, API Gateway, and DynamoDB",
-        "Implemented cost optimization strategies and utilized AWS tools like CloudWatch and CloudTrail",
-        "Developed understanding of cloud architecture, security best practices, and infrastructure as code (IaC)"
-      ],
-      technologies: ["AWS", "EC2", "S3", "Lambda", "DynamoDB", "CloudWatch", "CloudTrail"]
-    },
-    {
-      title: "Data Science Intern",
-      company: "Ethical Edufabrica Pvt. Ltd",
-      period: "May 2021 – Jun 2021",
-      location: "India",
-      type: "Internship",
-      description: [
-        "Improved survival prediction accuracy by 90% through development of machine learning model",
-        "Automated data integration processes, enhancing efficiency and reducing manual effort",
-        "Optimized end-to-end data pipeline, resulting in faster and more accurate predictions"
-      ],
-      technologies: ["Python", "Machine Learning", "Data Pipeline", "Data Integration"]
     }
   ];
 
@@ -139,134 +112,35 @@ My academic foundation in Computer Science with a specialization in Data Science
   const projects = [
     {
       title: "Engrossery – Grocery E-commerce Web Application",
-      description: "Developed a location-based grocery platform with real-time inventory tracking and secure payment integration. Designed RESTful APIs and built scalable backend services for enhanced user experience.",
+      description: "Developed a location-based grocery platform with real-time inventory tracking and secure payment integration.",
       technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "REST APIs", "Tailwind CSS"],
       github: "https://github.com/Sadvikha/engrossery",
       live: null,
       image: "🛒",
       year: "2022",
       features: [
-        "Location-based grocery delivery platform",
-        "Real-time inventory tracking system",
-        "Secure payment gateway integration",
-        "Scalable RESTful API architecture"
-      ]
-    },
-    {
-      title: "License Plate Detection and Road Safety System",
-      description: "Achieved 96.6% accuracy in license plate recognition using OCR and deep learning. Implemented noise reduction and tracking for traffic monitoring and road safety enhancement.",
-      technologies: ["Python", "OpenCV", "Deep Learning", "OCR", "Computer Vision"],
-      github: "https://github.com/Sadvikha/license-plate-detection",
-      live: null,
-      image: "🚗",
-      year: "2023",
-      features: [
-        "96.6% accuracy in license plate recognition",
-        "Advanced OCR and deep learning implementation",
-        "Noise reduction and image processing",
-        "Real-time traffic monitoring system"
-      ]
-    },
-    {
-      title: "Suspicious Login Detector",
-      description: "Built a Python tool to analyze logs and detect brute-force attacks, off-hour access, and abnormal IP activity. Enhanced security monitoring and threat detection capabilities.",
-      technologies: ["Python", "pandas", "geoip2", "python-dateutil", "Security Analytics"],
-      github: "https://github.com/Sadvikha/suspicious-login-detector",
-      live: null,
-      image: "🔒",
-      year: "2024",
-      features: [
-        "Brute-force attack detection",
-        "Off-hour access pattern analysis",
-        "Abnormal IP activity monitoring",
-        "Automated security log analysis"
-      ]
-    },
-    {
-      title: "Drone Automation for Security & Surveillance",
-      description: "Research project focusing on developing autonomous surveillance systems with sensor integration and path planning. Contributed to technical research, field testing, and data collection.",
-      technologies: ["Python", "Drone Automation", "Sensor Integration", "Path Planning", "IoT"],
-      github: null,
-      live: null,
-      image: "🚁",
-      year: "2019-2021",
-      features: [
-        "Autonomous surveillance system development",
-        "Advanced sensor integration",
-        "Intelligent path planning algorithms",
-        "Real-time data collection and analysis"
+        "Location-based grocery delivery",
+        "Real-time inventory tracking",
+        "Secure payment gateway",
+        "Scalable API architecture"
       ]
     }
   ];
-  // ✨ Updated Certifications Section
+
   const certifications = [
     {
       title: "SailPoint Identity Security Leader Credential",
       issuer: "SailPoint Technologies",
       date: "2024",
-      credentialId: "SISL-2024-001",
-      description: "Advanced certification in identity governance and security leadership with SailPoint technologies.",
       badgeUrl: "/badges/sailpoint.png",
       credentialUrl: "https://badgr.com/public/assertions/O2y1qlb4S42k6PkINY0AFw"
     },
     {
-      title: "AWS Academy Graduate - AWS Academy Cloud Architecting",
+      title: "AWS Academy Graduate - Cloud Architecting",
       issuer: "Amazon Web Services",
       date: "2023",
-      credentialId: "AWS-ARCH-2023-456",
-      description: "Comprehensive training in AWS cloud architecture design and implementation best practices.",
       badgeUrl: "/badges/aws-architect.png",
       credentialUrl: "https://www.credly.com/badges/0b5d709e-b037-4bac-b288-912ffde939f6"
-    },
-    {
-      title: "AWS Academy Graduate - AWS Academy Cloud Foundations",
-      issuer: "Amazon Web Services",
-      date: "2023",
-      credentialId: "AWS-FOUND-2023-789",
-      description: "Foundational knowledge of AWS cloud services, security, and architectural principles.",
-      badgeUrl: "/badges/aws-foundation.png",
-      credentialUrl: "https://www.credly.com/earner/earned/badge/6e5e1f1c-af52-4293-a4fe-9f311e50446c"
-    },
-
-    {
-      title: "Automation Anywhere Certified Advanced RPA Professional",
-      issuer: "Automation Anywhere",
-      date: "Jan 2023 – Jan 2025",
-      credentialId: "AAADVCA360-66943888",
-      badgeUrl: "/badges/automation-anywhere.png",
-      credentialUrl: "https://certificates.automationanywhere.com/701f71b2-f734-4e6c-9da7-f78d42f514de#acc.ROqovQxE"
-    },
-    {
-      title: "Oracle Certified Foundations Associate",
-      issuer: "Oracle",
-      date: "Feb 2023 – Feb 2025",
-      credentialId: "17953379OCIF2022CA",
-      badgeUrl: "/badges/oracle.png",
-      credentialUrl: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=D89B3180C0645A02A332DE7C7B11D73A975CBD21B0B2C2A87E3E91CA836EAF6C"
-    },
-    {
-      title: "Microsoft Certified: Azure Fundamentals",
-      issuer: "Microsoft",
-      date: "Feb 2023",
-      credentialId: "I633-0652",
-      badgeUrl: "/badges/azure.png",
-      credentialUrl: "https://www.credly.com/badges/53bbb2db-a984-4727-9849-5af0f66998cc/public_url"
-    },
-    {
-      title: "Aviatrix Certified Engineer – Multi-Cloud Networking Associate",
-      issuer: "Aviatrix",
-      date: "Sep 2024",
-      credentialId: "2021-13912",
-      badgeUrl: "/badges/aviatrix.png",
-      credentialUrl: "https://www.credly.com/badges/f59fc2fe-a7a0-4957-824c-8e3574258ad7/linked_in"
-    },
-    {
-      title: "Credly-Badges",
-      issuer: "Sources",
-      date: "-",
-      credentialId: "-",
-      badgeUrl: "/badges/aviatrix.png",
-      credentialUrl: "https://www.credly.com/users/sadvikha-m/badges#credly"
     }
   ];
 
@@ -318,10 +192,13 @@ My academic foundation in Computer Science with a specialization in Data Science
               }}
             />
           </div>
+
           <h1 className="text-3xl sm:text-5xl font-bold text-white mb-4">
             Hi, I'm <span className="text-blue-400">Sadvikha M</span>
           </h1>
+
           <h2 className="text-xl sm:text-2xl text-gray-300 mb-4">{personalInfo.title}</h2>
+
           <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-8">
             {personalInfo.subtitle}
           </p>
@@ -335,6 +212,7 @@ My academic foundation in Computer Science with a specialization in Data Science
             <span>View My Work</span>
             <ChevronRight size={16} />
           </button>
+
           <button
             onClick={() => navigateTo('about')}
             className="border border-gray-600 text-gray-300 px-6 sm:px-8 py-3 rounded-full hover:bg-gray-800 active:scale-95 transition-all duration-300"
@@ -344,6 +222,7 @@ My academic foundation in Computer Science with a specialization in Data Science
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-full">
+
           <div className="text-center">
             <div className="bg-blue-900/50 w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <Lock className="text-blue-400" size={22} />
@@ -367,23 +246,249 @@ My academic foundation in Computer Science with a specialization in Data Science
             <h3 className="font-semibold text-white mb-2">Cloud & DevOps</h3>
             <p className="text-gray-400 text-sm">AWS certified cloud architect</p>
           </div>
+
+        </div>
+      </div>
+    </div>
+  );
+  const AboutPage = () => (
+    <div className="min-h-screen py-20 bg-gray-900 px-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold text-white mb-4">About Me</h1>
+          <p className="text-lg text-gray-400">Get to know more about my journey</p>
+        </div>
+
+        <div className="prose text-gray-300 space-y-4 max-w-none">
+          {aboutContent.split('\n\n').map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+
+        <div className="mt-12 space-y-4 text-gray-300">
+          <div className="flex items-center space-x-3">
+            <Mail className="text-blue-400" size={20} />
+            <span>{personalInfo.email}</span>
+          </div>
+          <div className="flex items-center space-x-3">
+            <MapPin className="text-blue-400" size={20} />
+            <span>{personalInfo.location}</span>
+          </div>
+
+          <div className="flex space-x-4 pt-4">
+            <a href={personalInfo.github} target="_blank" className="text-gray-400 hover:text-white"><Github size={24} /></a>
+            <a href={personalInfo.linkedin} target="_blank" className="text-gray-400 hover:text-white"><Linkedin size={24} /></a>
+          </div>
         </div>
       </div>
     </div>
   );
 
-  // continuing with AboutPage, ExperiencePage, SkillsPage, ProjectsPage, CertificationsPage…
-  // (the remaining sections continue exactly as Part 1 ended)
+  const ExperiencePage = () => (
+    <div className="min-h-screen py-20 bg-gray-800 px-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold text-white mb-4">Experience</h1>
+          <p className="text-lg text-gray-400">My professional journey</p>
+        </div>
 
-  // ⭐️ IMPORTANT: Replace all fixed heights in ProjectsPage:
-  //    h-[520px] → h-auto sm:h-[520px]
-  //    min-h-[400px] → h-auto sm:min-h-[400px]
-  //    w-[250px] → w-full max-w-[250px]
+        <div className="space-y-8">
+          {experience.map((exp, index) => {
+            const isExpanded = expandedExp[index];
+            const shouldTruncate = exp.description.length > 3;
+            const displayItems =
+              isExpanded || !shouldTruncate ? exp.description : exp.description.slice(0, 3);
 
-  // ⭐️ ALSO: add `active:scale-95` to all hover card containers
-  // ⭐️ ALSO: remove ANY fixed px heights that cause overflow on mobile
+            return (
+              <div
+                key={index}
+                className="bg-gray-900 p-8 rounded-lg border border-gray-700 h-auto sm:min-h-[400px] hover:scale-[1.03] active:scale-95 transition-all duration-300 cursor-pointer"
+              >
+                <div className="flex flex-col md:flex-row md:justify-between mb-6">
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
+                    <p className="text-blue-400">{exp.company}</p>
+                    <p className="text-gray-400 text-sm">{exp.location}</p>
+                  </div>
 
-  // ⭐️ FINALLY — MAIN RETURN
+                  <div className="mt-4 md:mt-0 text-right">
+                    <div className="flex items-center space-x-2 text-gray-400 mb-2 justify-end">
+                      <Calendar size={16} />
+                      <span>{exp.period}</span>
+                    </div>
+
+                    <div className="bg-blue-900 text-blue-300 px-4 py-1 rounded-full text-sm text-center">
+                      {exp.type}
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-medium text-white mb-3">Key Responsibilities:</h4>
+                  <ul className="space-y-2">
+                    {displayItems.map((item, i2) => (
+                      <li key={i2} className="text-gray-300 flex items-start text-sm">
+                        <span className="text-blue-400 mr-3 mt-1">•</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {shouldTruncate && (
+                    <button
+                      onClick={() => toggleExpand(index)}
+                      className="text-blue-400 text-sm mt-3 flex items-center space-x-1"
+                    >
+                      <span>{isExpanded ? 'Show Less' : 'Read More'}</span>
+                      {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                    </button>
+                  )}
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {exp.technologies.map((tech, t) => (
+                    <span key={t} className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+
+  const SkillsPage = () => (
+    <div className="min-h-screen py-20 bg-gray-900 px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold text-white mb-4">Skills</h1>
+          <p className="text-lg text-gray-400">Technologies I work with</p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {Object.entries(skills).map(([category, list], index) => (
+            <div
+              key={index}
+              className="bg-gray-800/50 p-8 rounded-2xl border border-gray-700 hover:border-blue-500 active:scale-95 hover:scale-[1.03] transition-all duration-300"
+            >
+              <h2 className="text-2xl font-semibold text-white mb-6">{category}</h2>
+
+              <div className="flex flex-wrap gap-3">
+                {list.map((skill, si) => (
+                  <span key={si} className="bg-gray-900 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-700">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+
+  const ProjectsPage = () => (
+    <div className="min-h-screen py-20 bg-gray-800 px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold text-white mb-4">Projects</h1>
+          <p className="text-lg text-gray-400">A showcase of my work</p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {projects.map((project, pi) => (
+            <div
+              key={pi}
+              className="bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-700 h-auto sm:h-[520px] hover:scale-[1.02] active:scale-95 transition-all duration-300"
+            >
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 h-20 flex items-center justify-center">
+                <span className="text-4xl">{project.image}</span>
+              </div>
+
+              <div className="p-6 flex flex-col h-full">
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+                  <span className="text-xs bg-gray-700 text-gray-300 px-3 py-1 rounded-full">{project.year}</span>
+                </div>
+
+                <p className="text-gray-300 mb-4 text-sm line-clamp-3">{project.description}</p>
+
+                <div className="flex-1 overflow-y-auto max-h-[110px] mb-4 pr-1">
+                  <h4 className="font-medium text-white mb-2">Key Features:</h4>
+                  <ul className="text-sm text-gray-300 space-y-1">
+                    {project.features.map((f, fi) => (
+                      <li key={fi} className="flex items-start">
+                        <span className="text-blue-400 mr-2">•</span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mt-auto">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech, ti) => (
+                      <span key={ti} className="bg-gray-700 text-gray-300 px-2 py-1 rounded text-sm">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex space-x-4">
+                    {project.github && (
+                      <a href={project.github} target="_blank" className="flex items-center space-x-2 text-blue-400">
+                        <Github size={16} />
+                        <span>Code</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+
+  const CertificationsPage = () => (
+    <div className="min-h-screen py-20 bg-gray-900 px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold text-white mb-4">Certifications</h1>
+          <p className="text-lg text-gray-400">Professional credentials & achievements</p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {certifications.map((cert, ci) => (
+            <div
+              key={ci}
+              className="w-full max-w-[250px] mx-auto bg-gray-800 p-6 rounded-2xl border border-gray-700 hover:border-blue-500 hover:scale-[1.03] active:scale-95 transition-all duration-300"
+            >
+              <div className="w-20 h-20 mx-auto rounded-full bg-white flex items-center justify-center mb-6">
+                <img src={cert.badgeUrl} alt={cert.title} className="w-14 h-14 object-contain" />
+              </div>
+
+              <h3 className="text-base font-semibold text-white text-center mb-2">{cert.title}</h3>
+              <p className="text-gray-400 text-sm text-center mb-4">{cert.issuer}</p>
+
+              <a
+                href={cert.credentialUrl}
+                target="_blank"
+                className="block text-center px-4 py-2 rounded-full border border-blue-400 text-blue-300 hover:bg-blue-800 transition-all"
+              >
+                View Credential
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 
   const renderPage = () => {
     switch (currentPage) {
