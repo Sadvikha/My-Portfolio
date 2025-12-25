@@ -9,9 +9,10 @@ const Portfolio = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [expandedExp, setExpandedExp] = useState({});
 
-      // ✅ FIX: Reset scroll on page change
+    // ✅ FIX: Reset scroll on page change
   useEffect(() => { window.scrollTo(0, 0);}, [currentPage]);
-  
+
+
   const navigateTo = (page) => {
     setIsLoading(true);
     setTimeout(() => {
@@ -279,33 +280,83 @@ My academic foundation in Computer Science with a specialization in Data Science
     }
 
   ];
+  
+const Navigation = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const Navigation = () => (
-    <nav className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 bg-gray-900/90 backdrop-blur-md rounded-full px-6 py-3 shadow-lg border border-gray-700">
-      <div className="flex space-x-3">
-        {[
-          { id: 'home', label: 'Home', icon: Home },
-          { id: 'about', label: 'About', icon: User },
-          { id: 'experience', label: 'Experience', icon: Briefcase },
-          { id: 'skills', label: 'Skills', icon: Target },
-          { id: 'projects', label: 'Projects', icon: FolderOpen },
-          { id: 'certifications', label: 'Certifications', icon: Award }
-        ].map(({ id, label, icon: Icon }) => (
-          <button
-            key={id}
-            onClick={() => navigateTo(id)}
-            className={`flex items-center space-x-2 px-3 py-2 rounded-full transition-all duration-300 ${currentPage === id
-              ? 'bg-blue-600 text-white shadow-md'
-              : 'text-gray-300 hover:text-white hover:bg-gray-800'
+  const navItems = [
+    { id: 'home', label: 'Home', icon: Home },
+    { id: 'about', label: 'About', icon: User },
+    { id: 'experience', label: 'Experience', icon: Briefcase },
+    { id: 'skills', label: 'Skills', icon: Target },
+    { id: 'projects', label: 'Projects', icon: FolderOpen },
+    { id: 'certifications', label: 'Certifications', icon: Award }
+  ];
+
+  return (
+    <>
+      {/* Desktop + Mobile Top Bar */}
+      <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-gray-900/90 backdrop-blur-md rounded-full px-6 py-3 shadow-lg border border-gray-700 flex items-center">
+        
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-3">
+          {navItems.map(({ id, label, icon: Icon }) => (
+            <button
+              key={id}
+              onClick={() => navigateTo(id)}
+              className={`flex items-center space-x-2 px-3 py-2 rounded-full transition-all duration-300 ${
+                currentPage === id
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'text-gray-300 hover:text-white hover:bg-gray-800'
               }`}
-          >
-            <Icon size={16} />
-            <span className="text-sm font-medium hidden sm:inline">{label}</span>
-          </button>
-        ))}
-      </div>
-    </nav>
+            >
+              <Icon size={16} />
+              <span className="text-sm font-medium">{label}</span>
+            </button>
+          ))}
+        </div>
+
+        {/* Mobile Hamburger */}
+        <button
+          onClick={() => setMobileOpen(true)}
+          className="md:hidden text-gray-300 hover:text-white text-2xl"
+        >
+          ☰
+        </button>
+      </nav>
+
+      {/* Mobile Fullscreen Menu */}
+      {mobileOpen && (
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center">
+          <div className="bg-gray-900 w-full h-full p-8 relative">
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="absolute top-6 right-6 text-white text-3xl"
+            >
+              ✕
+            </button>
+
+            <div className="flex flex-col items-center justify-center h-full space-y-6 text-2xl">
+              {navItems.map(item => (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    navigateTo(item.id);
+                    setMobileOpen(false);
+                  }}
+                  className="text-gray-300 hover:text-white"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
+};
+
 
   const LoadingSpinner = () => (
     <div className="fixed inset-0 bg-gray-900/80 backdrop-blur-sm z-40 flex items-center justify-center">
