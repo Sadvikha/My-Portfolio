@@ -9,6 +9,9 @@ const Portfolio = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [expandedExp, setExpandedExp] = useState({});
 
+      // ✅ FIX: Reset scroll on page change
+  useEffect(() => { window.scrollTo(0, 0);}, [currentPage]);
+  
   const navigateTo = (page) => {
     setIsLoading(true);
     setTimeout(() => {
