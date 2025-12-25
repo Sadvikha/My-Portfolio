@@ -1,17 +1,20 @@
-import React, { useState, useEffect  } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Lock, Cloud, ChevronRight, Mail, MapPin, Github, Linkedin, ExternalLink, Calendar, Award, Code, Briefcase, User, Home, FolderOpen, Target, ChevronDown, ChevronUp, FileText } from 'lucide-react';
 
 const Portfolio = () => {
   useEffect(() => {
-  document.title = "Sadvikha’s Portfolio";
-}, []);
+    document.title = "Sadvikha’s Portfolio";
+  }, []);
+
   const [currentPage, setCurrentPage] = useState('home');
   const [isLoading, setIsLoading] = useState(false);
   const [expandedExp, setExpandedExp] = useState({});
 
-      // ✅ FIX: Reset scroll on page change
-  useEffect(() => { window.scrollTo(0, 0);}, [currentPage]);
-  
+  // Reset scroll on page change
+  useEffect(() => { 
+    window.scrollTo(0, 0); 
+  }, [currentPage]);
+
   const navigateTo = (page) => {
     setIsLoading(true);
     setTimeout(() => {
@@ -36,11 +39,8 @@ const Portfolio = () => {
   };
 
   const aboutContent = `Technology is not just about building systems. It is about solving problems that matter. I help organizations overcome complex technology challenges by building secure, scalable, and efficient solutions, combining deep technical expertise with a passion for solving problems that matter.
-
 I currently work as a Software Engineer at Triquinix Solutions, implementing identity and access management with SailPoint IIQ & IDN, automating workflows, access reviews, and policy enforcement, and building custom rules using Java and BeanShell, integrating with Active Directory and AWS to improve efficiency, compliance, and audit readiness.
-
 Previously, I worked as a Software Engineer at PIL Gaming, building full-stack web applications with React.js, Node.js, and MySQL, developing scalable APIs and microservices. I have internship experience in AWS Cloud and Data Science, contributed to a research paper on drone automation, and was a Teaching Assistant at KL University, mentoring students in Data Science and Big Data Analytics.
-
 My academic foundation in Computer Science with a specialization in Data Science and Big Data Analytics, combined with certifications in AWS, Azure, Oracle Cloud, and Identity Security Leader, reflects my commitment to continuous learning and adaptability.`;
 
   const experience = [
@@ -196,9 +196,7 @@ My academic foundation in Computer Science with a specialization in Data Science
     }
   ];
 
-  // ✨ Updated Certifications Section
   const certifications = [
-    // Existing Certifications
     {
       title: "SailPoint Identity Security Leader Credential",
       issuer: "SailPoint Technologies",
@@ -226,17 +224,6 @@ My academic foundation in Computer Science with a specialization in Data Science
       badgeUrl: "/badges/aws-foundation.png",
       credentialUrl: "https://www.credly.com/earner/earned/badge/6e5e1f1c-af52-4293-a4fe-9f311e50446c"
     },
-    /*{
-      title: "Excellence in Hackathon",
-      issuer: "KL University",
-      date: "2022",
-      credentialId: "KLU-HACK-2022-890",
-      description: "Certificate of excellence and memento for outstanding performance in university hackathon.",
-      badgeUrl: "/badges/hackathon.png",
-      credentialUrl: "#"
-    },*/
-
-    // ✅ New Credly Certifications
     {
       title: "Automation Anywhere Certified Advanced RPA Professional",
       issuer: "Automation Anywhere",
@@ -277,12 +264,11 @@ My academic foundation in Computer Science with a specialization in Data Science
       badgeUrl: "/badges/aviatrix.png",
       credentialUrl: "https://www.credly.com/users/sadvikha-m/badges#credly"
     }
-
   ];
 
   const Navigation = () => (
-    <nav className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 bg-gray-900/90 backdrop-blur-md rounded-full px-6 py-3 shadow-lg border border-gray-700">
-      <div className="flex space-x-3">
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-gray-900/90 backdrop-blur-md rounded-full px-4 py-2 shadow-lg border border-gray-700 max-w-full overflow-x-auto">
+      <div className="flex space-x-2 min-w-max">
         {[
           { id: 'home', label: 'Home', icon: Home },
           { id: 'about', label: 'About', icon: User },
@@ -294,13 +280,14 @@ My academic foundation in Computer Science with a specialization in Data Science
           <button
             key={id}
             onClick={() => navigateTo(id)}
-            className={`flex items-center space-x-2 px-3 py-2 rounded-full transition-all duration-300 ${currentPage === id
-              ? 'bg-blue-600 text-white shadow-md'
-              : 'text-gray-300 hover:text-white hover:bg-gray-800'
-              }`}
+            className={`flex items-center space-x-1.5 px-3 py-2 rounded-full transition-all duration-300 text-xs whitespace-nowrap ${
+              currentPage === id
+                ? 'bg-blue-600 text-white shadow-md'
+                : 'text-gray-300 hover:text-white hover:bg-gray-800'
+            }`}
           >
-            <Icon size={16} />
-            <span className="text-sm font-medium hidden sm:inline">{label}</span>
+            <Icon size={14} />
+            <span className="hidden xs:inline">{label}</span>
           </button>
         ))}
       </div>
@@ -314,33 +301,32 @@ My academic foundation in Computer Science with a specialization in Data Science
   );
 
   const HomePage = () => (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900">
-      <div className="max-w-4xl mx-auto px-6 text-center">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 px-4">
+      <div className="max-w-4xl mx-auto text-center">
         <div className="mb-8">
-          <div className="relative group w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-blue-400 bg-gradient-to-r from-blue-500 to-purple-600 transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(74,222,128,0.4)] mb-6">
+          <div className="relative group w-28 h-28 mx-auto rounded-full overflow-hidden border-4 border-blue-400 bg-gradient-to-r from-blue-500 to-purple-600 transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(74,222,128,0.4)] mb-6">
             <img
               src={personalInfo.profileImage}
               alt="Sadvikha M"
-              className="text-gray-400 hover:text-green-400 transition-all duration-300"
+              className="w-full h-full object-cover"
               onError={(e) => {
                 e.target.style.display = 'none';
                 e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-white text-4xl font-bold">SM</div>';
               }}
             />
           </div>
-          <h1 className="text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Hi, I'm <span className="text-blue-400">Sadvikha M</span>
           </h1>
-          <h2 className="text-2xl text-gray-300 mb-6">{personalInfo.title}</h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+          <h2 className="text-xl md:text-2xl text-gray-300 mb-6">{personalInfo.title}</h2>
+          <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-8">
             {personalInfo.subtitle}
           </p>
         </div>
-
-        <div className="flex justify-center space-x-4 mb-12">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
           <button
             onClick={() => navigateTo('projects')}
-            className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl"
+            className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl"
           >
             <span>View My Work</span>
             <ChevronRight size={16} />
@@ -352,9 +338,7 @@ My academic foundation in Computer Science with a specialization in Data Science
             Learn More
           </button>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-          {/* Identity & Access Management */}
           <div className="text-center">
             <div className="bg-blue-900/50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <Lock className="text-blue-400" size={24} />
@@ -364,8 +348,6 @@ My academic foundation in Computer Science with a specialization in Data Science
               SailPoint IIQ & IDN specialist with enterprise security focus
             </p>
           </div>
-
-          {/* Full Stack Development */}
           <div className="text-center">
             <div className="bg-green-900/50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <Code className="text-green-400" size={24} />
@@ -375,8 +357,6 @@ My academic foundation in Computer Science with a specialization in Data Science
               Building scalable web applications with modern technologies
             </p>
           </div>
-
-          {/* Cloud & DevOps */}
           <div className="text-center">
             <div className="bg-purple-900/50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <Cloud className="text-purple-400" size={24} />
@@ -391,7 +371,6 @@ My academic foundation in Computer Science with a specialization in Data Science
     </div>
   );
 
-
   const AboutPage = () => (
     <div className="min-h-screen py-20 bg-gray-900">
       <div className="max-w-4xl mx-auto px-6">
@@ -399,7 +378,6 @@ My academic foundation in Computer Science with a specialization in Data Science
           <h1 className="text-4xl font-bold text-white mb-4">About Me</h1>
           <p className="text-lg text-gray-400">Get to know more about my background and journey</p>
         </div>
-
         <div className="flex flex-col lg:flex-row gap-12 mb-16">
           <div>
             <h2 className="text-2xl font-semibold text-white mb-6">My Story</h2>
@@ -409,7 +387,6 @@ My academic foundation in Computer Science with a specialization in Data Science
               ))}
             </div>
           </div>
-
           <div>
             <h2 className="text-2xl font-semibold text-white mb-6">Contact Information</h2>
             <div className="space-y-4">
@@ -422,36 +399,21 @@ My academic foundation in Computer Science with a specialization in Data Science
                 <span className="text-gray-300">{personalInfo.location}</span>
               </div>
               <div className="flex space-x-4 pt-4">
-                <a href="https://github.com/Sadvikha"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-all duration-300">
+                <a href="https://github.com/Sadvikha" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-all duration-300">
                   <Github size={24} />
                 </a>
-
-                <a
-                  href="https://www.linkedin.com/in/sadvikha-m/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-all duration-300">
+                <a href="https://www.linkedin.com/in/sadvikha-m/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-all duration-300">
                   <Linkedin size={24} />
                 </a>
-
-                <a
-                  href="https://drive.google.com/file/d/1wJWtvkvw5ordvFttl5XQ-v-RewyO2VXi/view?usp=drive_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-all duration-300">
-                  <span className="text-sm font-medium text-gray-400 hover:text-blue-400">Resume</span>
+                <a href="https://drive.google.com/file/d/1wJWtvkvw5ordvFttl5XQ-v-RewyO2VXi/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-all duration-300">
+                  <FileText size={20} />
+                  <span className="text-sm font-medium">Resume</span>
                 </a>
-
               </div>
             </div>
           </div>
         </div>
-
-        {/* 🎓 Education Card with same hover palette */}
-        <div className="bg-gray-800 p-8 rounded-lg mb-8 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:border-blue-500 border border-gray-700 transition-all duration-300 cursor-pointer">
+        <div className="bg-gray-800 p-8 rounded-lg mb-8 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:border-blue-500 border border-gray-700 transition-all duration-300">
           <h2 className="text-2xl font-semibold text-white mb-6">Education</h2>
           <div className="bg-gray-900 p-6 rounded-lg">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
@@ -469,25 +431,20 @@ My academic foundation in Computer Science with a specialization in Data Science
               </div>
             </div>
             <p className="text-gray-300 text-sm">
-              <h3 className="font-semibold text-black-400 mb-2">Specialized in Data Science and Big Data Analytics. </h3>
-              <div>Relevant Coursework: Data Structures and Algorithms, Operating Systems, Databases, Machine Learning, Computer Networks, Cloud Computing, Software Engineering.
-              </div></p>
+              <strong className="font-semibold">Specialized in Data Science and Big Data Analytics.</strong><br />
+              Relevant Coursework: Data Structures and Algorithms, Operating Systems, Databases, Machine Learning, Computer Networks, Cloud Computing, Software Engineering.
+            </p>
           </div>
         </div>
-
-        {/* 🏆 Leadership & Recognition — entire section hovers, inner cards do not */}
-        <div className="bg-gray-800 p-8 rounded-lg transition-all duration-300 border border-gray-700 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:border-blue-500 cursor-pointer">
+        <div className="bg-gray-800 p-8 rounded-lg transition-all duration-300 border border-gray-700 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:border-blue-500">
           <h2 className="text-2xl font-semibold text-white mb-6">Leadership & Recognition</h2>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Inner cards are static (no hover classes) */}
             <div className="bg-gray-900 p-6 rounded-lg border border-gray-700">
               <h3 className="font-semibold text-blue-400 mb-2">Club Leadership</h3>
               <p className="text-gray-300 text-sm">
                 Led IoT & Cloud Edge Club and Data Science Club at KL University, organized 10+ technical events and mentored 250+ students
               </p>
             </div>
-
             <div className="bg-gray-900 p-6 rounded-lg border border-gray-700">
               <h3 className="font-semibold text-green-400 mb-2">Research Contribution</h3>
               <p className="text-gray-300 text-sm">
@@ -500,8 +457,6 @@ My academic foundation in Computer Science with a specialization in Data Science
     </div>
   );
 
-
-
   const ExperiencePage = () => (
     <div className="min-h-screen py-20 bg-gray-800">
       <div className="max-w-4xl mx-auto px-6">
@@ -509,19 +464,15 @@ My academic foundation in Computer Science with a specialization in Data Science
           <h1 className="text-4xl font-bold text-white mb-4">Experience</h1>
           <p className="text-lg text-gray-400">My professional journey and accomplishments</p>
         </div>
-
         <div className="space-y-8">
           {experience.map((exp, index) => {
             const isExpanded = expandedExp[index];
             const shouldTruncate = exp.description.length > 3;
             const displayItems = isExpanded || !shouldTruncate ? exp.description : exp.description.slice(0, 3);
-
             return (
               <div
                 key={index}
-                className="bg-gray-900 p-8 rounded-lg border border-gray-700 min-h-[400px] flex flex-col 
-                         transition-all duration-300 transform hover:scale-[1.03] 
-                         hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] hover:border-blue-500 cursor-pointer"
+                className="bg-gray-900 p-8 rounded-lg border border-gray-700 flex flex-col transition-all duration-300 transform hover:scale-[1.03] hover:shadow-[0_0_25px_rgba(59,130,246,0.4)] hover:border-blue-500"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
                   <div className="flex-1">
@@ -539,7 +490,6 @@ My academic foundation in Computer Science with a specialization in Data Science
                     </div>
                   </div>
                 </div>
-
                 <div className="mb-6 flex-1">
                   <h4 className="font-medium text-white mb-3">Key Responsibilities & Achievements:</h4>
                   <ul className="space-y-2">
@@ -560,7 +510,6 @@ My academic foundation in Computer Science with a specialization in Data Science
                     </button>
                   )}
                 </div>
-
                 <div>
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech, techIndex) => (
@@ -581,7 +530,6 @@ My academic foundation in Computer Science with a specialization in Data Science
     </div>
   );
 
-
   const SkillsPage = () => (
     <div className="min-h-screen py-20 bg-gray-900">
       <div className="max-w-6xl mx-auto px-6">
@@ -592,19 +540,18 @@ My academic foundation in Computer Science with a specialization in Data Science
             High-velocity languages, cloud services, and operating rituals that keep delivery sharp for the next generation of infrastructure.
           </p>
         </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {Object.entries(skills).map(([category, skillList], index) => (
             <div
               key={index}
-              className="bg-gray-800/50 p-8 rounded-2xl border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] cursor-pointer">
-
+              className="bg-gray-800/50 p-8 rounded-2xl border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]"
+            >
               <h2 className="text-2xl font-semibold text-white mb-6">{category}</h2>
               <div className="flex flex-wrap gap-3">
                 {skillList.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="bg-gray-900 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-700 hover:border-blue-500 hover:text-white transition-all cursor-pointer"
+                    className="bg-gray-900 text-gray-300 px-4 py-2 rounded-full text-sm border border-gray-700 hover:border-blue-500 hover:text-white transition-all"
                   >
                     {skill}
                   </span>
@@ -624,31 +571,23 @@ My academic foundation in Computer Science with a specialization in Data Science
           <h1 className="text-4xl font-bold text-white mb-4">Projects</h1>
           <p className="text-lg text-gray-400">A showcase of my recent work and accomplishments</p>
         </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-700 flex flex-col h-[520px] transition-all duration-300 transform hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(147,197,253,0.4)] hover:border-blue-500 cursor-pointer"
-
+              className="bg-gray-900 rounded-lg shadow-md overflow-hidden border border-gray-700 flex flex-col h-[520px] transition-all duration-300 transform hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(147,197,253,0.4)] hover:border-blue-500"
             >
-              {/* Uniform top gradient bar */}
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 h-20 flex items-center justify-center">
                 <span className="text-4xl">{project.image}</span>
               </div>
-
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-start justify-between mb-3 gap-3">
                   <h3 className="text-xl font-semibold text-white flex-1">{project.title}</h3>
                   <span className="text-xs bg-gray-700 text-gray-300 px-3 py-1 rounded-full whitespace-nowrap flex-shrink-0">{project.year}</span>
                 </div>
-
-                {/* Description: fixed visible area (3 lines) so it won't push content */}
                 <p className="text-gray-300 mb-4 text-sm overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' }}>
                   {project.description}
                 </p>
-
-                {/* Key features area: limited height with scroll if needed */}
                 <div className="mb-4 flex-1 overflow-hidden">
                   <h4 className="font-medium text-white mb-2">Key Features:</h4>
                   <ul className="text-sm text-gray-300 space-y-1 overflow-y-auto max-h-[110px] pr-1">
@@ -660,8 +599,6 @@ My academic foundation in Computer Science with a specialization in Data Science
                     ))}
                   </ul>
                 </div>
-
-                {/* Anchored bottom section: technologies + links stay aligned across cards */}
                 <div className="mt-auto">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, techIndex) => (
@@ -673,8 +610,7 @@ My academic foundation in Computer Science with a specialization in Data Science
                       </span>
                     ))}
                   </div>
-
-                  <div className="flex space-x-4">
+                  <div className="flex flex-wrap gap-4">
                     {project.github && (
                       <a
                         href={project.github}
@@ -707,7 +643,6 @@ My academic foundation in Computer Science with a specialization in Data Science
     </div>
   );
 
-
   const CertificationsPage = () => {
     const creativeCerts = certifications
       .filter(cert => cert.title !== "Excellence in Hackathon")
@@ -716,7 +651,6 @@ My academic foundation in Computer Science with a specialization in Data Science
         let bgGradient = '';
         let borderColor = '';
         let buttonColor = '';
-
         if (cert.title.includes('SailPoint')) {
           logoUrl = 'https://logo.clearbit.com/sailpoint.com';
           bgGradient = 'from-indigo-900 via-indigo-800 to-indigo-900';
@@ -757,7 +691,6 @@ My academic foundation in Computer Science with a specialization in Data Science
           borderColor = 'border-teal-500';
           buttonColor = 'border-teal-400 text-teal-300 hover:bg-teal-800';
         }
-
         return { ...cert, logoUrl, bgGradient, borderColor, buttonColor };
       });
 
@@ -770,31 +703,22 @@ My academic foundation in Computer Science with a specialization in Data Science
               Professional certifications and achievements
             </p>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
             {creativeCerts.map((cert, index) => (
               <div
                 key={index}
-                className={`relative bg-gradient-to-br ${cert.bgGradient} rounded-2xl w-[250px] h-[360px] p-6 flex flex-col border-2 ${cert.borderColor} shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] overflow-hidden`}
+                className={`relative bg-gradient-to-br ${cert.bgGradient} rounded-2xl w-full max-w-[280px] h-[360px] p-6 flex flex-col border-2 ${cert.borderColor} shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] overflow-hidden`}
               >
-                {/* Decorative Dotted Overlay */}
                 <div className="absolute inset-0 opacity-[0.07]">
                   <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                      <pattern
-                        id={`dots-${index}`}
-                        x="0" y="0" width="25" height="25"
-                        patternUnits="userSpaceOnUse"
-                      >
+                      <pattern id={`dots-${index}`} x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse">
                         <circle cx="1.5" cy="1.5" r="1.5" fill="currentColor" />
                       </pattern>
                     </defs>
                     <rect width="100%" height="100%" fill={`url(#dots-${index})`} />
                   </svg>
                 </div>
-
-                {/* Logo Badge */}
                 <div className="relative w-20 h-20 bg-white rounded-full border-4 border-white shadow-lg flex items-center justify-center z-10 mb-4 mx-auto">
                   <img
                     src={cert.logoUrl}
@@ -802,21 +726,16 @@ My academic foundation in Computer Science with a specialization in Data Science
                     className="w-14 h-14 object-contain p-1.5"
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src =
-                        'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI0MCIgY3k9IjQwIiByPSIzNSIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0zNSAzNUw0NSA0NUwzNSA1NSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjMiLz48L3N2Zz4=';
+                      e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI0MCIgY3k9IjQwIiByPSIzNSIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0zNSAzNUw0NSA0NUwzNSA1NSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjMiLz48L3N2Zz4=';
                     }}
                   />
                 </div>
-
-                {/* Text Info */}
                 <div className="text-center z-10 flex-grow flex flex-col justify-center">
                   <h3 className="text-base font-semibold text-white mb-1 leading-snug px-1">
                     {cert.title}
                   </h3>
                   <p className="text-white/70 text-xs font-medium">{cert.issuer}</p>
                 </div>
-
-                {/* Button (fixed bottom position) */}
                 <div className="z-10 mt-auto">
                   <a
                     href={cert.credentialUrl}
@@ -834,11 +753,6 @@ My academic foundation in Computer Science with a specialization in Data Science
       </div>
     );
   };
-
-
-
-
-
 
   const renderPage = () => {
     switch (currentPage) {
