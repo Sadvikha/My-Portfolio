@@ -2,7 +2,7 @@ import React, { useState, useEffect  } from 'react';
 import { Lock, Cloud, ChevronRight, Mail, MapPin, Github, Linkedin, ExternalLink, Calendar, Award, Code, Briefcase, User, Home, FolderOpen, Target, ChevronDown, ChevronUp, FileText } from 'lucide-react';
 import sailpointLogo from './assets/sailpoint.png';
 import oracleLogo from './assets/oracle.png';
-import aviatrix from './assests/aviatrix.png';
+import aviatrix from './assets/aviatrix.png';
 
 const Portfolio = () => {
   useEffect(() => {
