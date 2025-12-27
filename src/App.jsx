@@ -737,7 +737,7 @@ My academic foundation in Computer Science with a specialization in Data Science
           borderColor = 'border-orange-500';
           buttonColor = 'border-orange-400 text-orange-300 hover:bg-orange-800';
         } else if (cert.title.includes('Oracle')) {
-          logoUrl = 'assets/oracle.com';
+          logoUrl = '/assets/oracle.com';
           bgGradient = 'from-red-900 via-red-800 to-red-900';
           borderColor = 'border-red-500';
           buttonColor = 'border-red-400 text-red-300 hover:bg-red-800';
@@ -747,7 +747,7 @@ My academic foundation in Computer Science with a specialization in Data Science
           borderColor = 'border-sky-500';
           buttonColor = 'border-sky-400 text-sky-300 hover:bg-sky-800';
         } else if (cert.title.includes('Aviatrix')) {
-          logoUrl = 'assets/aviatrix.com';
+          logoUrl = '/assets/aviatrix.com';
           bgGradient = 'from-teal-900 via-cyan-900 to-teal-900';
           borderColor = 'border-teal-500';
           buttonColor = 'border-teal-400 text-teal-300 hover:bg-teal-800';
