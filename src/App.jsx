@@ -1,5 +1,7 @@
 import React, { useState, useEffect  } from 'react';
 import { Lock, Cloud, ChevronRight, Mail, MapPin, Github, Linkedin, ExternalLink, Calendar, Award, Code, Briefcase, User, Home, FolderOpen, Target, ChevronDown, ChevronUp, FileText } from 'lucide-react';
+import sailpointLogo from './assets/sailpoint.png';
+import oracleLogo from './assets/oracle.png';
 
 const Portfolio = () => {
   useEffect(() => {
@@ -718,7 +720,7 @@ My academic foundation in Computer Science with a specialization in Data Science
         let buttonColor = '';
 
         if (cert.title.includes('SailPoint')) {
-          logoUrl = '/assets/sailpoint.png';
+          logoUrl = sailpointLogo;
           bgGradient = 'from-indigo-900 via-indigo-800 to-indigo-900';
           borderColor = 'border-indigo-500';
           buttonColor = 'border-indigo-400 text-indigo-300 hover:bg-indigo-800';
@@ -737,7 +739,7 @@ My academic foundation in Computer Science with a specialization in Data Science
           borderColor = 'border-orange-500';
           buttonColor = 'border-orange-400 text-orange-300 hover:bg-orange-800';
         } else if (cert.title.includes('Oracle')) {
-          logoUrl = '/assets/oracle.png';
+          logoUrl = oracleLogo;
           bgGradient = 'from-red-900 via-red-800 to-red-900';
           borderColor = 'border-red-500';
           buttonColor = 'border-red-400 text-red-300 hover:bg-red-800';
