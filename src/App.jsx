@@ -732,7 +732,7 @@ My academic foundation in Computer Science with a specialization in Data Science
             ? 'border-cyan-400 text-cyan-300 hover:bg-cyan-800'
             : 'border-emerald-400 text-emerald-300 hover:bg-emerald-800';
         } else if (cert.title.includes('Automation Anywhere')) {
-          logoUrl = 'https://logo.clearbit.com/automationanywhere.com';
+          logoUrl = 'https://logowik.com/content/uploads/images/automation-anywhere1292.logowik.com.webp';
           bgGradient = 'from-orange-900 via-red-900 to-orange-900';
           borderColor = 'border-orange-500';
           buttonColor = 'border-orange-400 text-orange-300 hover:bg-orange-800';
