@@ -139,32 +139,34 @@ My academic foundation in Computer Science with a specialization in Data Science
   const projects = [
     {
       title: "Engrossery – Grocery E-commerce Web Application",
-      description: "Developed a location-based grocery platform with real-time inventory tracking and secure payment integration. Designed RESTful APIs and built scalable backend services for enhanced user experience.",
+      description: "A full-stack grocery e-commerce application built around practical user and seller interaction flows. The platform demonstrates structured API design, data-driven operations, and frontend-backend coordination in a production-style setup.",
       technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "REST APIs", "Tailwind CSS"],
       github: "https://github.com/Sadvikha/Engrossery_",
       live: null,
       image: "🛒",
       year: "2022",
       features: [
-        "Location-based grocery delivery platform",
-        "Real-time inventory tracking system",
-        "Secure payment gateway integration",
-        "Scalable RESTful API architecture"
+        "End-to-end user and seller interaction workflows",
+        "Data-driven product, cart, and order handling",
+        "Clean separation between frontend logic and backend services",
+        "Scalable request–response patterns using RESTful APIs",
+        "Responsive and consistent UI across devices"
       ]
     },
     {
       title: "License Plate Detection and Road Safety System",
-      description: "Achieved 96.6% accuracy in license plate recognition using OCR and deep learning. Implemented noise reduction and tracking for traffic monitoring and road safety enhancement.",
+      description: "A computer vision project focused on automated license plate recognition from images and videos.The system applies preprocessing, OCR, and deep learning techniques to extract structured information from unstructured visual data.",
       technologies: ["Python", "OpenCV", "Deep Learning", "OCR", "Computer Vision"],
       github: "https://github.com/Sadvikha/License-Plate-Detection-and-Road-Safety-System",
       live: null,
       image: "🚗",
       year: "2023",
       features: [
-        "96.6% accuracy in license plate recognition",
-        "Advanced OCR and deep learning implementation",
-        "Noise reduction and image processing",
-        "Real-time traffic monitoring system"
+        "Automated detection of license plates from visual inputs",
+        "Image preprocessing and noise reduction for improved recognition",
+        "OCR-based extraction of alphanumeric plate data",
+        "Frame-wise analysis for video-based inputs",
+        "Structured output generation for downstream analysis"
       ]
     },
     {
@@ -179,7 +181,8 @@ My academic foundation in Computer Science with a specialization in Data Science
         "Brute-force attack detection",
         "Off-hour access pattern analysis",
         "Abnormal IP activity monitoring",
-        "Automated security log analysis"
+        "Automated security log analysis", 
+        "Email alerts with attached reports of suspicious activity"
       ]
     },
     {
