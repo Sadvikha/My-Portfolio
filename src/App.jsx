@@ -639,10 +639,8 @@ My academic foundation in Computer Science with a specialization in Data Science
 
             >
               {/* Uniform top gradient bar */}
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 h-20 flex items-center justify-center rounded-t-lg">
-                <span className="text-4xl leading-none flex items-center justify-center">
-                  {project.image}
-                </span>
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 h-20 flex items-center justify-center">
+                <span className="text-4xl">{project.image}</span>
               </div>
 
 
