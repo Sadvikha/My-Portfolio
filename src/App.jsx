@@ -650,9 +650,10 @@ My academic foundation in Computer Science with a specialization in Data Science
                 </div>
 
                 {/* Description: fixed visible area (3 lines) so it won't push content */}
-                <p className="text-gray-300 mb-4 text-sm overflow-hidden" style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' }}>
-                  {project.description}
+                <p className="text-gray-300 mb-4 text-sm">
+                    {project.description}
                 </p>
+
 
                 {/* Key features area: limited height with scroll if needed */}
                 <div className="mb-4">
