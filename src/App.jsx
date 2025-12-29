@@ -149,7 +149,7 @@ My academic foundation in Computer Science with a specialization in Data Science
         "End-to-end user and seller interaction workflows",
         "Data-driven product, cart, and order handling",
         "Clean separation between frontend logic and backend services",
-        "Scalable request–response patterns using RESTful APIs",
+        "Scalable request-response patterns using RESTful APIs",
         "Responsive and consistent UI across devices"
       ]
     },
