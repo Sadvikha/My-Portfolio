@@ -650,9 +650,10 @@ My academic foundation in Computer Science with a specialization in Data Science
                 </div>
 
                 {/* Description: fixed visible area (3 lines) so it won't push content */}
-                <p className="text-gray-300 mb-4 text-sm">
+                <p className="text-gray-300 mb-4 text-sm line-clamp-3">
                     {project.description}
                 </p>
+
 
 
                 {/* Key features area: limited height with scroll if needed */}
