@@ -655,7 +655,7 @@ My academic foundation in Computer Science with a specialization in Data Science
                 </p>
 
                 {/* Key features area: limited height with scroll if needed */}
-                <div className="mb-4 flex-1 overflow-hidden">
+                <div className="mb-4">
                   <h4 className="font-medium text-white mb-2">Key Features:</h4>
                   <ul className="text-sm text-gray-300 space-y-1">
                     {project.features.map((feature, featureIndex) => (
