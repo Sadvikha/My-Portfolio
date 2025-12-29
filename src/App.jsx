@@ -660,7 +660,7 @@ My academic foundation in Computer Science with a specialization in Data Science
                 {/* Key features area: limited height with scroll if needed */}
                   <div className="mb-4">
                     <h4 className="font-medium text-white mb-2">Key Features:</h4>
-                    <ul className="text-sm text-gray-300 space-y-1 max-h-[110px] overflow-y-auto no-scrollbar">
+                    <ul className="text-sm text-gray-300 space-y-1 max-h-[110px] overflow-y-scroll no-scrollbar pr-2">
                       {project.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-start">
                           <span className="text-blue-400 mr-2">•</span>
