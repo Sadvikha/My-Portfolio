@@ -658,17 +658,18 @@ My academic foundation in Computer Science with a specialization in Data Science
 
 
                 {/* Key features area: limited height with scroll if needed */}
-                <div className="mb-4">
-                  <h4 className="font-medium text-white mb-2">Key Features:</h4>
-                  <ul className="text-sm text-gray-300 space-y-1">
-                    {project.features.slice(0, 5).map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <span className="text-blue-400 mr-2">•</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  <div className="mb-4">
+                    <h4 className="font-medium text-white mb-2">Key Features:</h4>
+                    <ul className="text-sm text-gray-300 space-y-1 max-h-[110px] overflow-y-auto no-scrollbar">
+                      {project.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start">
+                          <span className="text-blue-400 mr-2">•</span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
 
                 {/* Anchored bottom section: technologies + links stay aligned across cards */}
                 <div className="mt-auto">
