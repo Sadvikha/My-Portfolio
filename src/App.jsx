@@ -139,7 +139,7 @@ My academic foundation in Computer Science with a specialization in Data Science
   const projects = [
     {
       title: "Engrossery - E-commerce Web Application",
-      description: "A full-stack grocery e-commerce application built around practical user and seller interaction flows. The platform demonstrates structured API design, data-driven operations, and frontend-backend coordination in a production-style setup.",
+      description: "A full-stack e-commerce application built around practical user and seller interaction flows. The platform demonstrates structured API design, data-driven operations, and frontend-backend coordination in a production-style setup.",
       technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "REST APIs", "Tailwind CSS"],
       github: "https://github.com/Sadvikha/Engrossery_",
       live: null,
