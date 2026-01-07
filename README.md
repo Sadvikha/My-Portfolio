@@ -1,4 +1,4 @@
-# 💫 Sadvikha M — Developer Portfolio
+# 💫 Sadvikha M - Developer Portfolio
 
 Welcome to my **personal portfolio**, built with **React + Vite** and styled using **Tailwind CSS**.  
 This project reflects my technical skills, design sense, and commitment to creating clean, responsive, and interactive user experiences.
@@ -13,7 +13,7 @@ This project reflects my technical skills, design sense, and commitment to creat
 
 ## 🧭 Overview
 
-This portfolio serves as my **digital identity** — highlighting my background, featured projects, and technical expertise as a developer.  
+This portfolio serves as my **digital identity** - highlighting my background, featured projects, and technical expertise as a developer.  
 The goal of this project is to present my work in a visually appealing and well-structured way, while maintaining performance and scalability.
 
 ---
@@ -21,11 +21,11 @@ The goal of this project is to present my work in a visually appealing and well-
 ## 🧩 Features
 
 - ⚡ **Vite-powered React app** for blazing-fast builds  
-- 📱 **Fully Responsive** — adapts to all screen sizes  
-- 🎨 **Tailwind CSS Styling** — modern, clean, and highly customizable  
-- 🧠 **Modular Component Design** — reusable and scalable code structure  
-- 🖼️ **Dynamic Project Cards** — each project includes descriptions, stack info, and links  
-- 💬 **Contact Section** — easily connect via email or LinkedIn  
+- 📱 **Fully Responsive** - adapts to all screen sizes  
+- 🎨 **Tailwind CSS Styling** - modern, clean, and highly customizable  
+- 🧠 **Modular Component Design** - reusable and scalable code structure  
+- 🖼️ **Dynamic Project Cards** - each project includes descriptions, stack info, and links  
+- 💬 **Contact Section** - easily connect via email or LinkedIn  
 - 🌙 **Dark aesthetic theme** for elegant visual experience  
 
 ---
